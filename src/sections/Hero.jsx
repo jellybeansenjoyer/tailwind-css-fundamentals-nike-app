@@ -1,5 +1,6 @@
 import { arrowRight } from "../assets/icons"
 import Button from "../components/Button"
+import { statistics } from "../constants"
 const Hero = () => {
   return (
     <section
@@ -14,6 +15,14 @@ const Hero = () => {
       </h1>
       <p>Discover stylish Nike arrivals, qualirt comfort and innovation for your active life.</p>
       <Button label = "Shop now" iconUrl={arrowRight}/>
+      <div className="flex justify-start items-start flex-wrap w-full mt-20 gap-16">
+          {statistics.map((stat,index)=>(
+            <div>
+              <p>{stat.value}</p>
+              <p>{stat.label}</p>
+            </div>
+          ))}
+      </div>
     </div>
     </section>
   )
